@@ -8,18 +8,18 @@
   justify-content: center;
 }
 
-@mixin flex-center {
+@mixin flex-all-center {
   display: flex;
-  justify-content: center;  
   align-items: center;
+  justify-content: center;
 }
 
-@mixin flex-between {
+@mixin flex-justify-between {
   display: flex;
   justify-content: space-between;
 }
 
-@mixin flex-aic-between {
+@mixin flex-all-between {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -30,9 +30,9 @@
   flex-direction: column;
 }
 
-@mixin flex-column-center {
+@mixin flex-column-all-center {
   display: flex;
   flex-direction: column;
-  justify-content: center;  
   align-items: center;
+  justify-content: center;
 }

@@ -1,6 +1,85 @@
 :root {
+  /* --- Основные цвета (Primary) --- */
+  --main-iris: #2ebdff;
+  --border-iris: #dfdef3;
+  --hover-iris: #1463ff;
+  --pressed-iris: #085885;
+  --focus-iris: #4e7d0b;
+
+  /* --- Вторичные цвета (Secondary) --- */
+  --main-yellow: #ffd33c;
+  --surface-yellow: #fff60b;
+  --border-yellow: #fff0b6;
+  --hover-yellow: #058032;
+  --pressed-yellow: #806a1e;
+  --focus-yellow: #fff60b;
+
+  /* --- Успех (Success) --- */
+  --main-green: #50c0b9;
+  --surface-green: #f2fff8;
+  --border-green: #c5eed8;
+  --hover-green: #488277;
+  --pressed-green: #28593f;
+  --focus-green: #dcf5e7;
+
+  /* --- Ошибка (Error) --- */
+  --main-red: #f14141;
+  --surface-red: #fff2f2;
+  --border-red: #fac0c0;
+  --hover-red: #d93a3a;
+  --pressed-red: #802a2a;
+  --focus-red: #fcd9d9;
+
+  /* --- Информация (Info) --- */
+  --main-blue: #7230ea;
+  --surface-blue: #6f2ff;
+  --border-blue: #d0bdf8;
+  --hover-blue: #6633d1;
+  --pressed-blue: #3f24f8;
+  --focus-blue: #e3d7fb;
+
   // Neutral colors
-  --neutral-color-10: #fff;
-  --neutral-color-20: #F5F5F5;
-  
+  --neutral-10: #ffffff;
+  --neutral-20: #f5f5f5;
+  --neutral-30: #ededed;
+  --neutral-40: #ced1d8;
+  --neutral-50: #afb3bb;
+  --neutral-60: #18181d;
+  --neutral-70: #606060;
+  --neutral-80: #35373d;
+  --neutral-90: #161a34;
+  --neutral-100: #1d1e25;
+  --neutral-110: #e2f8f0;
+  --neutral-120: #828282;
+  --neutral-130: #d9d9d9;
+  --neutral-140: #000;
+  --neutral-150: #7e8492;
+
+  [data-theme="dark"] {
+    // neutral colors
+    --neutral-10: #1d1e25;
+    --neutral-100: #fff;
+    --neutral-140: #fff;
+
+    // logo colors
+    --logo-color-text: #fff;
+    --logo-color-circle: #343542;
+
+    // success colors
+    --success-color-70: #e2f8f033;
+
+    // overview colors
+    --black-bg-color: #18181d;
+  }
+
+  // Continer
+  --container-padding: 15px;
+  --container-width: 1200px;
+
+  // Transition
+  --transition: 0.2s;
+
+  // logo colors
+  --logo-color-text: #101010;
+  --logo-color-circle: #101010;
 }
