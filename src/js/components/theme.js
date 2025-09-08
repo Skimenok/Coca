@@ -1,22 +1,22 @@
 export const useTheme = () => {
-  const themeTarget = document.querySelector("[data-theme]");
-  const themeSwitcher = document.querySelector("[data-theme-switcher]");
+  let themeBody = document.querySelector("[data-theme]"),
+    checkbox = document.querySelector("[data-theme-switcher]"),
+    themeTarget = themeBody.dataset;
+  const burgerMenu = document.querySelector('[data-burger="menu"]');
 
-  const themeTargetDataset = themeTarget.dataset;
+  let theme = localStorage.getItem("theme") || "light";
+  themeTarget.theme = theme;
 
-  const theme = localStorage.getItem("theme") || "light";
-  themeTargetDataset.theme = theme;
-
-  if (theme === "dark") {
-    themeSwitcher.checked = true;
+  if (themeTarget.theme == "dark") {
+    checkbox.checked = true;
   }
 
-  themeSwitcher.addEventListener("click", () => {
-    if (themeTargetDataset.theme === "light") {
-      themeTargetDataset.theme = "dark";
+  checkbox.addEventListener("click", () => {
+    if (themeTarget.theme == "light") {
+      themeTarget.theme = "dark";
       localStorage.setItem("theme", "dark");
     } else {
-      themeTargetDataset.theme = "light";
+      themeTarget.theme = "light";
       localStorage.setItem("theme", "light");
     }
   });

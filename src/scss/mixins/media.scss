@@ -15,7 +15,7 @@
   }
 }
 
-@mixin small-table {
+@mixin small-tablet {
   @media (max-width: 768px) {
     @content;
   }

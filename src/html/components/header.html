@@ -32,7 +32,7 @@
         />
       </svg>
     </a>
-    <div class="header__right">
+    <div class="header__right" data-burger="menu">
       <nav class="nav header__nav">
         <ul class="nav__list">
           <li class="nav__item">
@@ -45,15 +45,24 @@
             <a href="/blog.html" class="nav__link text-p-default"> Blog </a>
           </li>
           <li class="nav__item">
-            <a href="pricing.html" class="nav__link text-p-default"> Pricing </a>
+            <a href="pricing.html" class="nav__link text-p-default">
+              Pricing
+            </a>
           </li>
         </ul>
       </nav>
       <label class="header__switcher">
         <span class="header__switcher-text text-p-default">Dark</span>
-        <input id="/" class="header__switcher-checkbox" type="checkbox" data-theme-switcher>
+        <input
+          id="/"
+          class="header__switcher-checkbox"
+          type="checkbox"
+          data-theme-switcher
+        />
       </label>
     </div>
-
+    <button class="burger" data-burger="btn" aria-label="Burger menu">
+      <span class="burger__line"></span>
+    </button>
   </div>
 </header>

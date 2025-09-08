@@ -6,6 +6,30 @@
   &__right {
     @include flex-align-center;
     gap: 111px;
+    @include tablet {
+      gap: 60px;
+    }
+    @include small-tablet {
+      position: fixed;
+      top: 0;
+      left: -100vw;
+      z-index: var(--z-index-3);
+      flex-direction: column;
+      justify-content: center;
+      width: 80dvw;
+      height: 100dvh;
+      background-color: var(--neutral-color-10);
+      opacity: 0;
+      visibility: hidden;
+      transition: left var(--transition), opacity var(--transition),
+        visibility var(--transition);
+
+      &--visible {
+        left: 0;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
   }
   &__logo {
     position: relative;
@@ -77,6 +101,9 @@
   &__list {
     @include flex-align-center;
     gap: 32px;
+    @include small-tablet {
+      flex-direction: column;
+    }
   }
   &__link {
     color: var(--neutral-100);
@@ -104,4 +131,28 @@
       }
     }
   }
+}
+
+.overlay {
+  @include small-tablet {
+    width: 33vw;
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-index-2);
+    background-color: #000000b3;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition), visibility var(--transition);
+    left: auto;
+
+    &--visible {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.burger {
+  @include burger;
+  z-index: 3;
 }
