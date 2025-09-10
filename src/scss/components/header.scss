@@ -1,5 +1,7 @@
 .header {
   background: var(--neutral-10);
+  position: fixed;
+  width: 100%;
   &__container {
     @include flex-all-between;
   }
@@ -13,10 +15,10 @@
       position: fixed;
       top: 0;
       left: -100vw;
-      z-index: var(--z-index-3);
+      z-index: var(--z-index-4);
       flex-direction: column;
       justify-content: center;
-      width: 80dvw;
+      width: 77dvw;
       height: 100dvh;
       background-color: var(--neutral-color-10);
       opacity: 0;
@@ -135,7 +137,7 @@
 
 .overlay {
   @include small-tablet {
-    width: 33vw;
+    width: 25vw;
     position: fixed;
     inset: 0;
     z-index: var(--z-index-2);
