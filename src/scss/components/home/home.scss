@@ -1,5 +1,8 @@
 .hero {
   padding-top: 90px;
+  @include mini-desktop {
+    padding-top: 50px;
+  }
   &__container {
     position: relative;
     align-items: flex-end;
@@ -35,11 +38,18 @@
     vertical-align: middle;
     color: var(--neutral-100);
     margin-bottom: 114px;
+    @include mini-desktop {
+      font-size: 60px;
+      margin-bottom: 50px;
+    }
   }
 
   &__right {
     position: relative;
     margin-right: 20px;
+    @include small-desktop {
+      margin-top: 200px;
+    }
   }
 
   &__btn {
@@ -221,6 +231,10 @@
 
   &__subtitle {
     margin-bottom: 69px;
+    @include mini-desktop {
+      font-size: 30px;
+      margin-bottom: 45px;
+    }
   }
   &__input {
     font-weight: 400;
