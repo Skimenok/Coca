@@ -1,38 +1,14 @@
 .header {
-  background: var(--neutral-10);
-  position: fixed;
-  width: 100%;
+  padding: 26px 0 22px;
+
+  @include mobile {
+    padding: 22px 0 18px;
+  }
+
   &__container {
     @include flex-all-between;
   }
-  &__right {
-    @include flex-align-center;
-    gap: 111px;
-    @include tablet {
-      gap: 60px;
-    }
-    @include small-tablet {
-      position: fixed;
-      top: 0;
-      left: -100vw;
-      z-index: var(--z-index-4);
-      flex-direction: column;
-      justify-content: center;
-      width: 77dvw;
-      height: 100dvh;
-      background-color: var(--neutral-color-10);
-      opacity: 0;
-      visibility: hidden;
-      transition: left var(--transition), opacity var(--transition),
-        visibility var(--transition);
 
-      &--visible {
-        left: 0;
-        opacity: 1;
-        visibility: visible;
-      }
-    }
-  }
   &__logo {
     position: relative;
     z-index: var(--z-index-4);
@@ -53,6 +29,40 @@
       }
     }
   }
+
+  &__right {
+    @include flex-align-center;
+    gap: 111px;
+
+    @include tablet {
+      gap: 60px;
+    }
+
+    @include small-tablet {
+      position: fixed;
+      top: 0;
+      left: -100vw;
+      z-index: var(--z-index-3);
+      flex-direction: column;
+      justify-content: center;
+      width: 80dvw;
+      height: 100dvh;
+      background-color: var(--neutral-10);
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        left var(--transition),
+        opacity var(--transition),
+        visibility var(--transition);
+
+      &--visible {
+        left: 0;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
   &__switcher {
     position: relative;
     border-radius: 13px;
@@ -63,7 +73,7 @@
     transition: background-color var(--transition);
 
     &::before {
-      content: "";
+      content: '';
       position: absolute;
       top: 2px;
       left: 3px;
@@ -72,7 +82,9 @@
       width: 23px;
       height: 23px;
       background-color: var(--neutral-120);
-      transition: left var(--transition), background-color var(--transition);
+      transition:
+        left var(--transition),
+        background-color var(--transition);
     }
 
     &-text {
@@ -84,16 +96,23 @@
       text-align: center;
       color: var(--neutral-140);
       transform: translateX(-50%);
+
+      @include small-tablet {
+        top: -28px;
+        font-size: 20px;
+      }
     }
 
     &-checkbox {
       appearance: none;
     }
+
     &:has(&-checkbox:checked) {
       background-color: var(--neutral-60);
+
       &::before {
         left: 38px;
-        background-color: var(--main-iris);
+        background-color: var(--primary-color-50);
       }
     }
   }
@@ -103,27 +122,41 @@
   &__list {
     @include flex-align-center;
     gap: 32px;
+
     @include small-tablet {
+      gap: 20px;
       flex-direction: column;
     }
+
+    @include mobile {
+      gap: 10px;
+    }
   }
+
   &__link {
-    color: var(--neutral-100);
+    position: relative;
     font-weight: 500;
     line-height: 162%;
-    position: relative;
+    color: var(--neutral-100);
+
+    @include small-tablet {
+      font-size: 20px;
+      line-height: 200%;
+    }
 
     &::after {
-      content: "";
-      left: 0;
-      right: 0;
+      content: '';
       position: absolute;
+      right: 0;
       bottom: -5px;
-      background-color: var(--neutral-100);
+      left: 0;
       height: 1px;
+      background-color: var(--neutral-100);
       opacity: 0;
       visibility: hidden;
-      transition: var(--transition);
+      transition:
+        opacity var(--transition),
+        visibility var(--transition);
     }
 
     &:hover {
@@ -137,15 +170,15 @@
 
 .overlay {
   @include small-tablet {
-    width: 25vw;
     position: fixed;
     inset: 0;
     z-index: var(--z-index-2);
     background-color: #000000b3;
     opacity: 0;
     visibility: hidden;
-    transition: opacity var(--transition), visibility var(--transition);
-    left: auto;
+    transition:
+      opacity var(--transition),
+      visibility var(--transition);
 
     &--visible {
       opacity: 1;
@@ -156,5 +189,4 @@
 
 .burger {
   @include burger;
-  z-index: 3;
 }
